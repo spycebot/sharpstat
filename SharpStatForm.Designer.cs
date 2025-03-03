@@ -31,6 +31,9 @@
             labelFileName = new Label();
             buttonLoadFile = new Button();
             textBoxFilePathDisplay = new TextBox();
+            buttonExitApp = new Button();
+            label1 = new Label();
+            labelFileTypeReadout = new Label();
             SuspendLayout();
             // 
             // labelFileName
@@ -61,12 +64,48 @@
             textBoxFilePathDisplay.ReadOnly = true;
             textBoxFilePathDisplay.Size = new Size(576, 23);
             textBoxFilePathDisplay.TabIndex = 2;
+            textBoxFilePathDisplay.TextAlign = HorizontalAlignment.Right;
+            // 
+            // buttonExitApp
+            // 
+            buttonExitApp.Font = new Font("Bahnschrift", 12F);
+            buttonExitApp.Location = new Point(572, 59);
+            buttonExitApp.Name = "buttonExitApp";
+            buttonExitApp.Size = new Size(128, 34);
+            buttonExitApp.TabIndex = 3;
+            buttonExitApp.Text = "Exit";
+            buttonExitApp.UseVisualStyleBackColor = true;
+            buttonExitApp.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Bahnschrift", 12F);
+            label1.Location = new Point(31, 109);
+            label1.Name = "label1";
+            label1.Size = new Size(77, 19);
+            label1.TabIndex = 4;
+            label1.Text = "File Type:";
+            label1.Click += label1_Click;
+            // 
+            // labelFileTypeReadout
+            // 
+            labelFileTypeReadout.AutoSize = true;
+            labelFileTypeReadout.Font = new Font("Bahnschrift", 12F);
+            labelFileTypeReadout.Location = new Point(112, 109);
+            labelFileTypeReadout.Name = "labelFileTypeReadout";
+            labelFileTypeReadout.Size = new Size(47, 19);
+            labelFileTypeReadout.TabIndex = 5;
+            labelFileTypeReadout.Text = "None";
             // 
             // SharpStatForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelFileTypeReadout);
+            Controls.Add(label1);
+            Controls.Add(buttonExitApp);
             Controls.Add(textBoxFilePathDisplay);
             Controls.Add(buttonLoadFile);
             Controls.Add(labelFileName);
@@ -82,5 +121,8 @@
         private Label labelFileName;
         private Button buttonLoadFile;
         private TextBox textBoxFilePathDisplay;
+        private Button buttonExitApp;
+        private Label label1;
+        private Label labelFileTypeReadout;
     }
 }

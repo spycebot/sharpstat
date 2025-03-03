@@ -8,7 +8,7 @@ namespace sharpstat
 {
     public partial class SharpStatForm : Form
     {
-        private string fileName;
+        private string fileName = "";
         private string fileDialogFilter = "dat files (*.dat)|*.dat|csv files (*.csv)|*.csv|All files (*.*)|*.*";
         public SharpStatForm()
         {
@@ -33,9 +33,23 @@ namespace sharpstat
         private void OpenFile(string fileName)
         {
             textBoxFilePathDisplay.Text = fileName;
+            string[] path_parts = fileName.Split('.');
+            Console.WriteLine($"Path parts length: {path_parts.Length}");
+            Console.WriteLine($"Last element: {path_parts[path_parts.Length - 1]}");
+            labelFileTypeReadout.Text = path_parts[path_parts.Length - 1];
         }
 
         private void SharpStatForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
